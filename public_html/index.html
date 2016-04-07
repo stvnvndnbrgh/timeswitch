@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+	<title>Gtest</title>
+        <meta charset="utf-8">
+	<script>var CANV_GAUGE_FONTS_PATH = '../fonts'</script>
+	<script src="gauge.js"></script>
+        <script>
+            var data = '{"temperature": 6.45}';
+            var json = JSON.parse(data);
+
+        </script>
+</head>
+
+<body>
+
+	<canvas id="gauge1" width="800" height="800"
+		data-type="canv-gauge"
+		data-title="Temperature"
+		data-min-value="0"
+		data-max-value="110"
+		data-major-ticks="0 10 20 30 40 50 60 70 80 90 100 110"
+		data-minor-ticks="10"
+		data-stroke-ticks="true"
+		data-units="°C"
+		data-value-format="3.2"
+		data-glow="true"
+		data-animation-delay="10"
+		data-animation-duration="200"
+		data-animation-fn="bounce"
+		data-colors-needle="#f00"
+                data-highlights="0 20 #eee, 20 60 #ccc, 60 95 #999, 95 105 #0f0, 105 110 #999"
+		data-onready="setInterval( function() { Gauge.Collection.get('gauge1').setValue( Math.random() * 110);}, 500);"
+	></canvas>
+	
+	<canvas data-type="canv-gauge"
+                data-value="45.32"
+                data-value-format="2.2"            
+                ></canvas>
+	
+	<canvas width="300" height="300"
+		data-type="canv-gauge"
+		data-title="Hip-Hop"
+		data-onready="Gauge.Collection[2].setValue( 68)"
+	></canvas>
+
+
+    <canvas width="200" height="200"
+        data-type="canv-gauge"
+        data-title="Negative Values"
+        data-min-value="-50"
+        data-max-value="50"
+        data-onready="setInterval( function() { Gauge.Collection[3].setValue(json.temperature)}, 1000);"
+        ></canvas>
+
+	<canvas width="400" height="400"
+		data-type="canv-gauge"
+
+		data-colors-needle-start="rgba(240, 128, 128, 1)"
+		data-colors-needle-end="rgba(255, 160, 122, .9)"
+    data-colors-needle-shadowup="rgba(2, 255, 255, 0.2)"
+    data-colors-needle-shadowdown="rgba(188, 143, 143, 0.45)"
+    data-colors-needle-circle-outerstart="#f0f0f0"
+    data-colors-needle-circle-outerend="#ccc"
+    data-colors-needle-circle-innerstart="#e8e8e8"
+    data-colors-needle-circle-innerend="#f5f5f5"
+    data-colors-valuebox-rectstart="#888"
+    data-colors-valuebox-rectend="#666"
+    data-colors-valuebox-background="#babab2"
+    data-colors-valuebox-shadow="rgba(0, 0, 0, 1)"
+    data-colors-valuetext-foreground="#444"
+    data-colors-valuetext-shadow="rgba(0, 0, 0, 0.3)"
+    data-colors-circle-shadow="rgba(0, 0, 0, 0.3)"
+    data-colors-circle-outerstart="#ddd"
+    data-colors-circle-outerend="#aaa"
+    data-colors-circle-middlestart="#eee"
+    data-colors-circle-middleend="#f0f0f0"
+    data-colors-circle-innerstart="#fafafa"
+    data-colors-circle-innerend="#ccc"
+
+    data-circles-outervisible="true"
+    data-circles-middlevisible="true"
+    data-circles-innervisible="true"
+
+    data-valuebox-visible="true"
+    data-valuetext-visible="true"
+
+		data-onready="setInterval( function() { Gauge.Collection[4].setValue( Math.random() * 100);}, 1000);"
+	></canvas>
+
+	<canvas width="300" height="300"
+		data-type="canv-gauge"
+
+    data-circles-outervisible="false"
+    data-circles-middlevisible="false"
+    data-circles-innervisible="false"
+
+		data-onready="setInterval( function() { Gauge.Collection[5].setValue( Math.random() * 100);}, 1000);"
+	></canvas>
+
+
+
+</body>
+</html>
+
