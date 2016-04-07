@@ -6,15 +6,15 @@
 	<script>var CANV_GAUGE_FONTS_PATH = '../fonts'</script>
 	<script src="gauge.js"></script>
         <script>
-            var data = '{"temperature": 6.45}';
+            var data = '{"temperature": 36.45}';
             var json = JSON.parse(data);
-
         </script>
+        <meta http-equiv="refresh" content="3" />
 </head>
 
 <body>
 
-	<canvas id="gauge1" width="800" height="800"
+	<canvas id="gauge1" width="200" height="200"
 		data-type="canv-gauge"
 		data-title="Temperature"
 		data-min-value="0"
@@ -30,7 +30,7 @@
 		data-animation-fn="bounce"
 		data-colors-needle="#f00"
                 data-highlights="0 20 #eee, 20 60 #ccc, 60 95 #999, 95 105 #0f0, 105 110 #999"
-		data-onready="setInterval( function() { Gauge.Collection.get('gauge1').setValue( Math.random() * 110);}, 500);"
+		data-onready="setInterval( function() { Gauge.Collection.get('gauge1').setValue(json.temperature)}, 500);"
 	></canvas>
 	
 	<canvas data-type="canv-gauge"
