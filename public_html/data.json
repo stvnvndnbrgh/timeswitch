@@ -1,1 +1,3 @@
-{"temperature": 6.45}
+{"items":[
+    {"temp1": 6.45,"temp2": 15.23}
+]}
